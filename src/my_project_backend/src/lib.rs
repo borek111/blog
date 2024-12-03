@@ -10,7 +10,13 @@ thread_local! {
 #[ic_cdk::update]
 fn add_blog(title: String, content: String, tags: Vec<String>) -> Result<Blog, String>{
     if title.len() > 250 {
-        return Err("Title is too long!".to_string())
+        return Err("Title is too long!".to_string());
+    }
+    if content.len() < 500 {
+        return Err("Content is too short!".to_string());
+    }
+    if tags.len() <= 3 {
+        return Err("Not enough tags!".to_string());
     }
     let blog = Blog::new(title, content, tags);
     BLOGS.with(|blogs| blogs.borrow_mut().push(blog));
