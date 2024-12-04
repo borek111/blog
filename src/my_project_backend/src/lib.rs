@@ -12,6 +12,7 @@ thread_local! {
 
 #[ic_cdk::update]
 fn add_blog(title: String, content: String, tags: Vec<String>) -> Result<Blog, String>{
+    let config = CONFIG.with(|config| config.borrow().clone());
     if title.len() > 250 {
         return Err("Title is too long!".to_string())
     }
