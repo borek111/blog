@@ -2,9 +2,12 @@ use std::cell::RefCell;
 use crate::blog::Blog;
 
 mod blog;
+mod config;
 
 thread_local! {
+    static CONFIG: RefCell<Config>> = RefCell::new(Config::new());
     static BLOGS: RefCell<Vec<Blog>> = RefCell::new(Vec::new());
+    
 }
 
 #[ic_cdk::update]
