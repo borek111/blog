@@ -29,10 +29,10 @@ fn add_blog(title: String, content: String, tags: Vec<String>) -> Result<Blog, S
     if tags.len() > config.max_tags_count as usize {
         return Err("Too many tags!".to_string())
     }
-    let are_tags_in_config_tags = tags.iter().any(|tag| !config.tags.contains(tag));
-    if are_tags_in_config_tags {
-        return Err("Tags are not valid!".to_string()) 
-    }
+    // let are_tags_in_config_tags = tags.iter().any(|tag| !config.tags.contains(tag));
+    // if are_tags_in_config_tags {
+    //     return Err("Tags are not valid!".to_string()) 
+    // }
     
     let blog = Blog::new(title, content, tags);
     BLOGS.with(|blogs| blogs.borrow_mut().push(blog));
