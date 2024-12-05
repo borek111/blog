@@ -49,20 +49,7 @@ getBlogs()
           id="title" 
           alt="title" 
           type="text" 
-          class="
-            w-full 
-            rounded-3xl 
-            py-1 
-            px-4 
-            outline-none
-            border-solid 
-            border-2
-            border-black
-            transition 
-            duration-150 
-            ease-in-out
-            hover:border-indigo-500
-            "/>
+          class="w-full rounded-3xl py-1 px-4 outline-none border-solid border-2 order-black transition duration-150 ease-in-out hover:border-indigo-500"/>
       </div>
       <div>
         <p class="text-black font-bold ">Content: </p>
@@ -70,20 +57,7 @@ getBlogs()
           id="content" 
           alt="content" 
           type="text" 
-          class="
-            w-full 
-            rounded-3xl 
-            py-1 
-            px-4 
-            outline-none 
-            min-h-[100px] 
-            border-solid 
-            border-2
-            border-black
-            transition 
-            duration-150 
-            ease-in-out
-            hover:border-indigo-500
+          class="w-full rounded-3xl py-1 px-4 outline-none min-h-[100px] border-solid border-2 border-black transition duration-150    ease-in-out hover:border-indigo-500
           "></textarea>
       </div>
       <div>
@@ -93,45 +67,16 @@ getBlogs()
           alt="tags" 
           type="text"
           v-on:keyup.enter="saveTag"
-          class="
-            w-full 
-            rounded-3xl 
-            py-1 
-            px-4 
-            outline-none
-            border-solid 
-            border-2
-            border-black
-            transition 
-            duration-150 
-            ease-in-out
-            hover:border-indigo-500"
+          class="w-full rounded-3xl py-1 px-4 outline-none border-solid border-2 border-black transition duration-150 ease-in-out hover:border-indigo-500"
           />
           <div class="flex gap-1 flex-wrap my-2">
-          <div v-for="(tag, id) in tags" class="
-          text-white 
-          bg-indigo-400 
-          rounded-3xl 
-          py-1 
-          px-4
-          text-sm
-          w-fit" @click="removeTag(id)">
+          <div v-for="(tag, id) in tags" class="text-white bg-indigo-400 rounded-3xl py-1 px-4 text-sm w-fit" @click="removeTag(id)">
           {{ tag }}
         </div></div>
       </div>
       <div class="flex justify-end">
         <button 
-          class="
-          text-white 
-          bg-indigo-400 
-          rounded-3xl 
-          py-1 
-          px-4
-          transition 
-          duration-150 
-          ease-in-out
-          hover:scale-110
-          " type="submit">
+          class="text-white bg-indigo-400 rounded-3xl py-1 px-4 transition duration-150 ease-in-out hover:scale-110" type="submit">
             Click to add!
         </button>
       </div>
@@ -146,14 +91,9 @@ getBlogs()
         <p>{{ blog.content }}</p>
         <div class="mt-2">
           <div class="flex gap-2 flex-wrap">
-            <div v-for="tag in blog.tags" class="
-              text-white 
-              bg-indigo-400 
-              rounded-3xl 
-              py-1 
-              px-4
-              text-sm
-              w-fit"> {{ tag }}</div>
+            <div v-for="tag in blog.tags" class="text-white bg-indigo-400 rounded-3xl py-1 px-4 text-smw-fit"> 
+              {{ tag }}
+            </div>
             </div>
         </div>
       </div>
