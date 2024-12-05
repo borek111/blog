@@ -32,10 +32,10 @@ getBlogs()
     <img src="/logo2.svg" alt="DFINITY logo" class="mx-auto mt-4" />
     <br />
     <br />
-    <form action="#" @submit="handleSubmit">
-      <div><p class="text-white">Title: </p><input id="title" alt="title" type="text" /></div>
-      <div><p class="text-white">Content: </p><input id="content" alt="content" type="text" /></div>
-      <div><p class="text-white">Tags: </p><input id="tags" alt="tags" type="text" /></div>
+    <form class="grid gap 4" action="#" @submit="handleSubmit">
+      <div><p class="text-white">Title: </p><input id="title" alt="title" type="text" class="w-full" /></div>
+      <div><p class="text-white">Content: </p><input id="content" alt="content" type="text" class="w-full" /></div>
+      <div><p class="text-white">Tags: </p><input id="tags" alt="tags" type="text" class="w-full" /></div>
       <button class="text-white" type="submit">Click to add!</button>
     </form>
     {{ blogs }}
