@@ -32,12 +32,32 @@ getBlogs()
     <img src="/logo2.svg" alt="DFINITY logo" class="mx-auto mt-4" />
     <br />
     <br />
-    <form class="grid gap 4" action="#" @submit="handleSubmit">
-      <div><p class="text-white">Title: </p><input id="title" alt="title" type="text" class="w-full" /></div>
-      <div><p class="text-white">Content: </p><input id="content" alt="content" type="text" class="w-full" /></div>
-      <div><p class="text-white">Tags: </p><input id="tags" alt="tags" type="text" class="w-full" /></div>
-      <button class="text-white" type="submit">Click to add!</button>
+    <form class="grid gap 4 pb 4 mb 4 border solid border b-2 " action="#" @submit="handleSubmit">
+      <div>
+        <p class="text-white">Title: </p><input id="title" alt="title" type="text" class="w-full rounded-3xl py-1 px-4 outline-none " />
+      </div>
+      <div>
+        <p class="text-white">Content: </p>
+        <textarea id="content" alt="content" type="text" class="w-full rounded-3xl py-1 px-4 outline-none min-h-[100px]" ></textarea>
+      </div>
+      <div>
+        <p class="text-white">Tags: </p><input id="tags" alt="tags" type="text" class="w-full rounded-3xl py-1 px-4 outline-none" />
+      </div>
+      <div class="flex justify-end">
+        <button class="text-white bg-emerald-500 rounded-3xl py-1 px-4 mt-3" type="submit" >Click to add!</button>
+      </div>
+    
     </form>
+    <div>
+      <div v-for="blog in blogs"> 
+         <h2>{{blog.title}}</h2>
+         <p>{{blog.content }}</p>
+         <div>
+            <p>{{blog.date}}</p>
+            <p>{{blog.tags}}</p>
+         </div>
+      </div>
+    </div>
     {{ blogs }}
   </main>
 </template>
